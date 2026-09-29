@@ -201,26 +201,32 @@ public class Teatro {
         espetaculo.exibirMapa();
     }
 
-    public void exibirReserva() {
-        if (!verificarCarga()) {
-            return;
-        }
-
-        try {
-            String cpf = lerCpf();
-            Reserva reserva = buscarReserva(cpf);
-
-            if (reserva == null) {
-                System.out.println("Reserva nao encontrada para o CPF informado.");
-                return;
-            }
-
-            System.out.println();
-            exibirResumoReserva(reserva, true);
-        } catch (Exception e) {
-            System.out.println("Erro ao buscar a reserva.");
-        }
+  public void exibirReserva() {
+    if (!verificarCarga()) {
+        return;
     }
+
+    try {
+        String cpf = lerCpf();
+        boolean encontrou = false; 
+
+        for (int indice = 0; indice < reservas.size(); indice++) {
+            Reserva reserva = reservas.get(indice);
+
+            if (reserva.getCpf().equals(cpf)) {
+                System.out.println();
+                exibirResumoReserva(reserva, true);
+                encontrou = true;
+            }
+        }
+
+        if (!encontrou) {
+            System.out.println("Reserva nao encontrada para o CPF informado.");
+        }
+    } catch (Exception e) {
+        System.out.println("Erro ao buscar a reserva.");
+    }
+}
 
     private boolean verificarCarga() {
         if (!dadosCarregados) {
