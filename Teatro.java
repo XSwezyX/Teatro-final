@@ -118,6 +118,7 @@ public class Teatro {
         if (!verificarCarga()) {
             return;
         }
+       
 
         System.out.println("\nEspetaculos disponiveis:");
 
@@ -138,13 +139,14 @@ public class Teatro {
         if (!verificarCarga()) {
             return;
         }
+        Espetaculo espetaculo = null;
+        while (espetaculo == null) {
+            int codigo = lerInteiro("Codigo do espetaculo: ");
+            espetaculo = buscarEspetaculo(codigo);
 
-        int codigo = lerInteiro("Codigo do espetaculo: ");
-        Espetaculo espetaculo = buscarEspetaculo(codigo);
-
-        if (espetaculo == null) {
-            System.out.println("Espetaculo nao encontrado.");
-            return;
+            if (espetaculo == null) {
+                System.out.println("Espetaculo nao encontrado. Digite o codigo novamente.");
+            }
         }
 
         if (reservas.isFull()) {
