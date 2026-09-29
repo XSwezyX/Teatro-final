@@ -1,0 +1,10 @@
+101;O Fantasma da Opera;10/09/2026;20:00;45.00
+102;Mamma Mia;12/09/2026;21:00;55.00
+103;O Rei Leao;15/09/2026;19:30;70.00
+104;Noite de Comedia;18/09/2026;20:30;35.00
+105;Concerto de Primavera;20/09/2026;18:00;40.00
+106;Festival de Danca;23/09/2026;19:00;50.00
+107;Romeu e Julieta;25/09/2026;20:00;45.00
+108;Tributo ao Rock Nacional;27/09/2026;21:30;60.00
+109;A Bela e a Fera;30/09/2026;19:30;65.00
+110;Show Acustico;03/10/2026;20:30;50.00
