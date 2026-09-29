@@ -64,7 +64,7 @@ public class Teatro {
     private void exibirIntegrantes() {
         System.out.println("\nIntegrantes do grupo:");
         System.out.println("- Henrique Haramaki Mataveli - 10752924");
-        System.out.println("-Lukas Barone Sussa -10753291");
+        System.out.println("- Lukas Barone Sussa -10753291");
         System.out.println("- Ryan Silva de Sousa - 10757255");
     }
 
@@ -100,7 +100,7 @@ public class Teatro {
                 aux = linha.readLine();
             }
 
-            data.close();
+            data.close(); 
             dadosCarregados = true;
             System.out.println("Espetaculos carregados com sucesso.");
         } catch (FileNotFoundException e) {
@@ -252,19 +252,6 @@ public class Teatro {
 
         return null;
     }
-
-    private Reserva buscarReserva(String cpf) throws Exception {
-        for (int indice = 0; indice < reservas.size(); indice++) {
-            Reserva reserva = reservas.get(indice);
-
-            if (reserva.getCpf().equals(cpf)) {
-                return reserva;
-            }
-        }
-
-        return null;
-    }
-
     private String selecionarAssento(Espetaculo espetaculo, int numeroAssento) {
         while (true) {
             String assento = lerTexto("Assento " + numeroAssento + " (ex: A8): ").toUpperCase();
